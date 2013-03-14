@@ -57,7 +57,8 @@ app.use(function( req, res, next ){
 });
 
 var server = http.createServer( app );
-server.listen( 5555, function( err ){
+var port = process.env.PORT||5555;
+server.listen( port, function( err ){
 	if( err ){
 		return console.error( "could not start proxy server:", err );
 	}
